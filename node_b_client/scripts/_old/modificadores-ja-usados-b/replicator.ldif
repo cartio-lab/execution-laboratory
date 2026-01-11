@@ -1,0 +1,13 @@
+dn: cn=replicator,dc=carto,dc=org
+objectClass: simpleSecurityObject
+objectClass: organizationalRole
+cn: replicator
+description: Usuário para replicação MMR
+userPassword: 33028729
+
+dn: olcDatabase={1}mdb,cn=config
+changetype: modify
+add: olcAccess
+olcAccess: to *
+  by dn.exact="cn=replicator,dc=carto,dc=org" read
+  by * break

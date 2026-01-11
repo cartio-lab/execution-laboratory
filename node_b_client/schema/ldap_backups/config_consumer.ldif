@@ -1,0 +1,19 @@
+dn: olcDatabase={1}mdb,cn=config
+changetype: modify
+add: olcSyncrepl
+olcSyncrepl: {0}rid=001
+  provider=ldap://172.16.101.100:389
+  bindmethod=simple
+  binddn="cn=admin,dc=carto,dc=org"
+  credentials=33028729
+  searchbase="dc=carto,dc=org"
+  type=refreshAndPersist
+  interval=00:00:00:01
+  retry="5 5 300 +"
+  timeout=1
+  logbase="cn=accesslog"
+  logfilter="(&(objectClass=auditWriteObject)(reqResult=0))"
+  syncdata=accesslog
+-
+add: olcUpdateRef
+olcUpdateRef: ldap://172.16.101.100:389

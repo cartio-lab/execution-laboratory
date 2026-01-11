@@ -1,0 +1,23 @@
+dn: olcDatabase={1}mdb,cn=config
+changetype: modify
+# Deleta a configuração antiga (com IP público)
+delete: olcSyncRepl
+olcSyncRepl: rid=002
+  provider=ldap://152.84.72.34
+  type=refreshAndPersist
+  retry="5 5 300 5"
+  searchbase="dc=carto,dc=org"
+  bindmethod=simple
+  binddn="cn=replicator,dc=carto,dc=org"
+  credentials=33028729
+-
+# Adiciona a nova configuração (com IP privado)
+add: olcSyncRepl
+olcSyncRepl: rid=002
+  provider=ldap://172.16.101.100
+  type=refreshAndPersist
+  retry="5 5 300 5"
+  searchbase="dc=carto,dc=org"
+  bindmethod=simple
+  binddn="cn=replicator,dc=carto,dc=org"
+  credentials=33028729
