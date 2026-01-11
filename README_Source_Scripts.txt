@@ -1,4 +1,4 @@
-PROJETO CARTIO - Common Authorized Resilient Tactical Identity Operations
+PROJETO CARTIO - Common Auxiliary Registry for Tactical Operations
 AUTORIA: Wagner Philippe Calazans
 ANO: 2025
 INSTITUIÇÃO: Instituto Militar de Engenharia (IME)
